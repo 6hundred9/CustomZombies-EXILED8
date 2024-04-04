@@ -18,7 +18,6 @@ namespace ZombieRework_EXILED8
             Config.asyphixator.Register();
             Config.tanky.Register();
             Config.speedjunkie.Register();
-            Exiled.Events.Handlers.Scp049.FinishingRecall += EventHandler.FinishingRecall;
             base.OnEnabled();
         }
 
@@ -27,7 +26,6 @@ namespace ZombieRework_EXILED8
             Config.asyphixator.Unregister();
             Config.tanky.Unregister();
             Config.speedjunkie.Unregister();
-            Exiled.Events.Handlers.Scp049.FinishingRecall += EventHandler.FinishingRecall;
             base.OnDisabled();
         }
     }
