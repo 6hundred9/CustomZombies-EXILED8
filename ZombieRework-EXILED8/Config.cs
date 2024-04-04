@@ -9,5 +9,6 @@ namespace ZombieRework_EXILED8
         public bool Debug { get; set; } = false;
         public TankyZombie tanky = new TankyZombie();
         public Asyphixator asyphixator = new Asyphixator();
+        public Speedjunkie speedjunkie = new Speedjunkie();
     }
 }
