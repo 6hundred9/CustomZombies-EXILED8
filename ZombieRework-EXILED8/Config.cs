@@ -11,4 +11,5 @@ namespace ZombieRework_EXILED8
         public Asyphixator asyphixator = new Asyphixator();
         public Speedjunkie speedjunkie = new Speedjunkie();
     }
+    
 }

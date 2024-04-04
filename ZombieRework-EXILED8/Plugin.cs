@@ -28,5 +28,6 @@ namespace ZombieRework_EXILED8
             Config.speedjunkie.Unregister();
             base.OnDisabled();
         }
+        
     }
 }

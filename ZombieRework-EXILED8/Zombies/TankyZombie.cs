@@ -14,5 +14,6 @@ namespace ZombieRework_EXILED8.Zombies
         public override float SpawnChance { get; set; } = 75f;
         public override bool KeepPositionOnSpawn { get; set; } = true;
 
+        
     }
 }
