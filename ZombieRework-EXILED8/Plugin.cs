@@ -11,6 +11,7 @@ namespace ZombieRework_EXILED8
         public override string Prefix { get; } = "MoreZombies";
         public override Version Version { get; } = new Version(1, 0);
         public override Version RequiredExiledVersion { get; } = new Version(8, 8, 0);
+        public override bool IgnoreRequiredVersionCheck { get; } = true;
         public static Plugin Instance;
         public override void OnEnabled()
         {

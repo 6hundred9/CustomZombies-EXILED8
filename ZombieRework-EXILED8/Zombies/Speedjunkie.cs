@@ -1,4 +1,6 @@
-﻿using Exiled.API.Enums;
+﻿using System.Collections.Generic;
+using Exiled.API.Enums;
+using Exiled.API.Features.Spawn;
 using Exiled.CustomRoles.API.Features;
 using Exiled.Events.EventArgs.Player;
 using PlayerRoles;
@@ -17,7 +19,17 @@ namespace ZombieRework_EXILED8.Zombies
         public override float SpawnChance { get; set; } = 30f;
         public override bool KeepPositionOnSpawn { get; set; } = true;
 
-        
+        public override SpawnProperties SpawnProperties { get; set; } = new()
+        {
+            RoleSpawnPoints = new List<RoleSpawnPoint>
+            {
+                new()
+                {
+                    Role = RoleTypeId.Scp0492,
+                    Chance = 25
+                }
+            }
+        };
         public void SubscribeEvent()
         {
             

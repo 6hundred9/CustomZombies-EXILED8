@@ -1,4 +1,6 @@
-﻿using Exiled.CustomRoles.API.Features;
+﻿using System.Collections.Generic;
+using Exiled.API.Features.Spawn;
+using Exiled.CustomRoles.API.Features;
 using PlayerRoles;
 
 namespace ZombieRework_EXILED8.Zombies
@@ -13,7 +15,17 @@ namespace ZombieRework_EXILED8.Zombies
         public override string CustomInfo { get; set; } = "Tanky Zombie";
         public override float SpawnChance { get; set; } = 75f;
         public override bool KeepPositionOnSpawn { get; set; } = true;
-
+        public override SpawnProperties SpawnProperties { get; set; } = new()
+        {
+            RoleSpawnPoints = new List<RoleSpawnPoint>
+            {
+                new()
+                {
+                    Role = RoleTypeId.Scp0492,
+                    Chance = 75
+                }
+            }
+        };
         
     }
 }

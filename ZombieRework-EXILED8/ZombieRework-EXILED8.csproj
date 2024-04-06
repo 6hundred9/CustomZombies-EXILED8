@@ -12,6 +12,7 @@
         <AssemblyName>ZombieRework_EXILED8</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
+        <LangVersion>9</LangVersion>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -76,10 +77,10 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Config.cs" />
-        <Compile Include="EventHandler.cs" />
         <Compile Include="Plugin.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="Zombies\Asyphixator.cs" />
+        <Compile Include="Zombies\Speedjunkie.cs" />
         <Compile Include="Zombies\TankyZombie.cs" />
     </ItemGroup>
     <ItemGroup>
