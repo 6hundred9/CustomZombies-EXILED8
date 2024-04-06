@@ -3,6 +3,7 @@ using Exiled.API.Enums;
 using Exiled.API.Features.Spawn;
 using Exiled.CustomRoles.API.Features;
 using Exiled.Events.EventArgs.Player;
+using Exiled.Events.Handlers;
 using PlayerRoles;
 
 namespace ZombieRework_EXILED8.Zombies
@@ -31,13 +32,13 @@ namespace ZombieRework_EXILED8.Zombies
 
         protected override void SubscribeEvents()
         {
-            Exiled.Events.Handlers.Player.Hurting += OnHurting;
+            Player.Hurting += OnHurting;
             base.SubscribeEvents();
         }
 
         protected override void UnsubscribeEvents()
         {
-            Exiled.Events.Handlers.Player.Hurting -= OnHurting;
+            Player.Hurting -= OnHurting;
             base.UnsubscribeEvents();
         }
 

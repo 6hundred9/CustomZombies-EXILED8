@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Exiled.API.Enums;
 using Exiled.API.Features.Spawn;
 using Exiled.CustomRoles.API.Features;
 using Exiled.Events.EventArgs.Player;
-using Exiled.Events.Handlers;
+using MEC;
 using PlayerRoles;
-using UnityEngine;
 using Player = Exiled.API.Features.Player;
 using Random = UnityEngine.Random;
 
@@ -21,9 +18,10 @@ namespace ZombieRework_EXILED8.Zombies
         public override string Description { get; set; } = "You're 049's test subject that can randomly go invisible";
         public override string CustomInfo { get; set; } = "Testsubject";
         public override bool KeepPositionOnSpawn { get; set; } = true;
-        public int InvisChance { get; set; } = 75;
-        public int InvisSeconds { get; set; } = 10;
-        public int InvisCooldown { get; set; } = 60;
+        private CoroutineHandle _yes;
+        private int InvisChance { get; set; } = 75;
+        private int InvisSeconds { get; set; } = 10;
+        private int InvisCooldown { get; set; } = 60;
 
         public override SpawnProperties SpawnProperties { get; set; } = new()
         {
@@ -43,11 +41,17 @@ namespace ZombieRework_EXILED8.Zombies
 
         }
 
-        internal protected void OnSpawning(SpawningEventArgs ev)
+        private void OnSpawning(SpawningEventArgs ev)
         {
-            var invisFunc = InvisFunc(ev.Player);
+            _yes = Timing.RunCoroutine(InvisFunc(ev.Player));
         }
-        internal protected IEnumerable<float> InvisFunc(Player plr)
+
+        protected internal void OnDying(DyingEventArgs ev)
+        {
+            Timing.KillCoroutines(_yes);
+        }
+
+        private IEnumerator<float> InvisFunc(Player plr)
         {
             for (;;)
             {
@@ -59,6 +63,7 @@ namespace ZombieRework_EXILED8.Zombies
                 }
             }
             
+            // ReSharper disable once IteratorNeverReturns
         }
         
     }
