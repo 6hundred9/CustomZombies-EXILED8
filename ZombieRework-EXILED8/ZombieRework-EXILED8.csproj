@@ -71,6 +71,12 @@
         <Reference Include="System.Core"/>
         <Reference Include="System.Data"/>
         <Reference Include="System.Xml"/>
+        <Reference Include="UnityEngine">
+          <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+          <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
         <Reference Include="YamlDotNet, Version=11.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
           <HintPath>..\packages\EXILED.8.8.0\lib\net48\YamlDotNet.dll</HintPath>
         </Reference>
@@ -82,6 +88,7 @@
         <Compile Include="Zombies\Asyphixator.cs" />
         <Compile Include="Zombies\Speedjunkie.cs" />
         <Compile Include="Zombies\TankyZombie.cs" />
+        <Compile Include="Zombies\TestSubject.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />

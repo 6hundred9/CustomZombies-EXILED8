@@ -15,7 +15,6 @@ namespace ZombieRework_EXILED8.Zombies
         public override string Name { get; set; } = "SCP-049-Asyphixator";
         public override string Description { get; set; } = "Suffocate your enemies to death";
         public override string CustomInfo { get; set; } = "Asyphixator";
-        public override float SpawnChance { get; set; } = 50f;
         public override bool KeepPositionOnSpawn { get; set; } = true;
         public override SpawnProperties SpawnProperties { get; set; } = new()
         {

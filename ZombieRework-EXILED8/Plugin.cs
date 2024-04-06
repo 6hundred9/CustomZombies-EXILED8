@@ -19,6 +19,7 @@ namespace ZombieRework_EXILED8
             Config.asyphixator.Register();
             Config.tanky.Register();
             Config.speedjunkie.Register();
+            Config.testSubject.Register();
             base.OnEnabled();
         }
 
@@ -27,6 +28,7 @@ namespace ZombieRework_EXILED8
             Config.asyphixator.Unregister();
             Config.tanky.Unregister();
             Config.speedjunkie.Unregister();
+            Config.testSubject.Unregister();
             base.OnDisabled();
         }
         

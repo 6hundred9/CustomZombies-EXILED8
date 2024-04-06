@@ -16,7 +16,6 @@ namespace ZombieRework_EXILED8.Zombies
         public override string Name { get; set; } = "Speedjunkie";
         public override string Description { get; set; } = "Fighting force against the cola addict";
         public override string CustomInfo { get; set; } = "Speedjunkie";
-        public override float SpawnChance { get; set; } = 30f;
         public override bool KeepPositionOnSpawn { get; set; } = true;
 
         public override SpawnProperties SpawnProperties { get; set; } = new()
@@ -30,9 +29,9 @@ namespace ZombieRework_EXILED8.Zombies
                 }
             }
         };
-        public void SubscribeEvent()
+        protected override void SubscribeEvents()
         {
-            
+            Exiled.Events.Handlers.Player.Spawning += OnSpawning;
         }
 
         private void OnSpawning(SpawningEventArgs ev)
