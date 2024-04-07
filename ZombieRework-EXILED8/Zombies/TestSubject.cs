@@ -17,6 +17,7 @@ namespace ZombieRework_EXILED8.Zombies
         public override string Name { get; set; } = "Test Subject";
         public override string Description { get; set; } = "You're 049's test subject that can randomly go invisible";
         public override string CustomInfo { get; set; } = "Testsubject";
+        public override RoleTypeId Role { get; set; } = RoleTypeId.Scp0492;
         public override bool KeepPositionOnSpawn { get; set; } = true;
         private CoroutineHandle _yes;
         private int InvisChance { get; set; } = 75;
@@ -55,7 +56,7 @@ namespace ZombieRework_EXILED8.Zombies
         {
             for (;;)
             {
-                yield return InvisCooldown;
+                yield return Timing.WaitForSeconds(InvisCooldown);
                 int random = Random.Range(InvisChance, 101);
                 if (random == 100)
                 {
