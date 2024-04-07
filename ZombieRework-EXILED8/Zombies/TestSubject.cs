@@ -57,11 +57,8 @@ namespace ZombieRework_EXILED8.Zombies
             for (;;)
             {
                 yield return Timing.WaitForSeconds(InvisCooldown);
-                int random = Random.Range(InvisChance, 101);
-                if (random == 100)
-                {
-                    plr.EnableEffect(EffectType.Invisible, 1, InvisSeconds);
-                }
+                plr.EnableEffect(EffectType.Invisible, 1, InvisSeconds);
+
             }
             
             // ReSharper disable once IteratorNeverReturns
