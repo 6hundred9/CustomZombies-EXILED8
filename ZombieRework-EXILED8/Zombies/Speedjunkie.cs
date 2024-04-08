@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using Exiled.API.Enums;
-using Exiled.API.Features.Spawn;
+﻿using Exiled.API.Enums;
 using Exiled.CustomRoles.API.Features;
 using Exiled.Events.EventArgs.Player;
-using Exiled.Events.Handlers;
 using PlayerRoles;
+using Player = Exiled.API.Features.Player;
 
 namespace ZombieRework_EXILED8.Zombies
 {
@@ -13,25 +11,24 @@ namespace ZombieRework_EXILED8.Zombies
         public override uint Id { get; set; } = 3;
         public override int MaxHealth { get; set; } = 600;
         public override RoleTypeId Role { get; set; } = RoleTypeId.Scp0492;
-        public override string Name { get; set; } = "Speedjunkie";
+        public override string Name { get; set; } = "SCP-049-2-Speedjunkie";
         public override string Description { get; set; } = "Fighting force against the cola addict";
         public override string CustomInfo { get; set; } = "Speedjunkie";
         public override bool KeepPositionOnSpawn { get; set; } = true;
 
-        public override SpawnProperties SpawnProperties { get; set; } = new()
+        // 1,4
+        public override void AddRole(Player player)
         {
-            RoleSpawnPoints = new List<RoleSpawnPoint>
-            {
-                new()
-                {
-                    Role = RoleTypeId.Scp0492,
-                    Chance = 25
-                }
-            }
-        };
+            player.Role.Set(RoleTypeId.Scp0492);
+            SubscribeEvents();
+            player.RankName = Name;
+            player.Health = MaxHealth;
+            player.CustomInfo = CustomInfo;
+            base.AddRole(player);
+        }
         protected override void SubscribeEvents()
         {
-            Player.Spawning += OnSpawning;
+            Exiled.Events.Handlers.Player.Spawning += OnSpawning;
         }
 
         private void OnSpawning(SpawningEventArgs ev)
@@ -39,6 +36,5 @@ namespace ZombieRework_EXILED8.Zombies
             ev.Player.EnableEffect(EffectType.Scp207, 2);
             ev.Player.EnableEffect(EffectType.Vitality);
         }
-        
     }
 }

@@ -16,19 +16,21 @@ namespace ZombieRework_EXILED8
         public override void OnEnabled()
         {
             Instance = this;
-            Config.asyphixator.Register();
-            Config.tanky.Register();
-            Config.speedjunkie.Register();
-            Config.testSubject.Register();
+            Config.Asyphixator.Register();
+            Config.Tanky.Register();
+            Config.Speedjunkie.Register();
+            Config.TestSubject.Register();
+            Exiled.Events.Handlers.Scp049.FinishingRecall += EventHandler.RecallFinished;
             base.OnEnabled();
         }
 
         public override void OnDisabled()
         {
-            Config.asyphixator.Unregister();
-            Config.tanky.Unregister();
-            Config.speedjunkie.Unregister();
-            Config.testSubject.Unregister();
+            Config.Asyphixator.Unregister();
+            Config.Tanky.Unregister();
+            Config.Speedjunkie.Unregister();
+            Config.TestSubject.Unregister();
+            Exiled.Events.Handlers.Scp049.FinishingRecall -= EventHandler.RecallFinished;
             base.OnDisabled();
         }
         
