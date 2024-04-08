@@ -7,10 +7,10 @@ namespace ZombieRework_EXILED8
     {
         public bool IsEnabled { get; set; } = true;
         public bool Debug { get; set; } = false;
-        public  TankyZombie Tanky = new TankyZombie();
-        public  Asyphixator Asyphixator = new Asyphixator();
-        public  Speedjunkie Speedjunkie = new Speedjunkie();
-        public TestSubject TestSubject = new TestSubject();
+        public  TankyZombie tanky = new TankyZombie();
+        public  Asyphixator asyphixator = new Asyphixator();
+        public  Speedjunkie speedjunkie = new Speedjunkie();
+        public TestSubject testSubject = new TestSubject();
     }
     
 }
